@@ -1,4 +1,6 @@
 
+import re
+
 # INPUTS
 text = input("Enter a phone number: ")
 message = input("Enter a message to identify the phone number(s): ")
@@ -42,5 +44,8 @@ def isMessage(message):
 
 
 # OUTPUTS
+    """""""""""
+    Prints the output
+    """""""""""
 print(text + ' is a phone number: ' + str(isPhoneNumber(text)))
 print(isMessage(message))

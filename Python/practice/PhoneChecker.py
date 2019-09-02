@@ -9,7 +9,7 @@ import time
 
 # STARTUP
 def main():
-    warning = print(""" 
+    logo = print(""" 
 
         ██╗    ██╗███████╗██╗      ██████╗ ██████╗ ███╗   ███╗███████╗    ████████╗ ██████╗     ██████╗ ██╗  ██╗ ██████╗ ███╗   ██╗███████╗     ██████╗██╗  ██╗███████╗ ██████╗██╗  ██╗███████╗██████╗ 
         ██║    ██║██╔════╝██║     ██╔════╝██╔═══██╗████╗ ████║██╔════╝    ╚══██╔══╝██╔═══██╗    ██╔══██╗██║  ██║██╔═══██╗████╗  ██║██╔════╝    ██╔════╝██║  ██║██╔════╝██╔════╝██║ ██╔╝██╔════╝██╔══██╗
@@ -18,6 +18,7 @@ def main():
         ╚███╔███╔╝███████╗███████╗╚██████╗╚██████╔╝██║ ╚═╝ ██║███████╗       ██║   ╚██████╔╝    ██║     ██║  ██║╚██████╔╝██║ ╚████║███████╗    ╚██████╗██║  ██║███████╗╚██████╗██║  ██╗███████╗██║  ██║
          ╚══╝╚══╝ ╚══════╝╚══════╝ ╚═════╝ ╚═════╝ ╚═╝     ╚═╝╚══════╝       ╚═╝    ╚═════╝     ╚═╝     ╚═╝  ╚═╝ ╚═════╝ ╚═╝  ╚═══╝╚══════╝     ╚═════╝╚═╝  ╚═╝╚══════╝ ╚═════╝╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝                                                                                                                                                                                                
     """)
+
     
     time.sleep(2)
 
@@ -85,13 +86,13 @@ def menu():
     
     choice = input("""
 
-    WELCOME TO PHONE CHECKER")
-    Please select the following choices below: 
-    1: PHONE CHECKER
-    2: MESSAGE SCANNER
-    3: AREA CODE DETECTOR
-    
-    ENTER CHOICE HERE: """)
+        WELCOME TO PHONE CHECKER")
+        Please select the following choices below: 
+        1: PHONE CHECKER
+        2: MESSAGE SCANNER
+        3: AREA CODE DETECTOR
+
+        ENTER CHOICE HERE: """)
 
     if choice == "1":
         isPhoneNumber()
@@ -137,7 +138,9 @@ def isPhoneNumber():
     # ADD ART FOR THIS FUNCTION
     # """
 
-    phone_number = input("Enter a phone number: ")
+    phone_number = input("""
+    
+        Enter a phone number: """)
 
     """
     REWORK ON PHONE NUMBER AND ADD REGEX INSTEAD OF IF STATEMENTS

@@ -1,15 +1,18 @@
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
+
 """
 NOTE: THIS CHECKER IS STILL IN PROGRESS. ALGORITHIMS FOR COMPLEX NUMBERS NOT IMPLEMENTED YET.
 
 """
-import re
-import sys
 import time
+import sys
+import re
 
 
 # STARTUP
 def main():
-    logo = print(""" 
+    print(""" 
 
         ██╗    ██╗███████╗██╗      ██████╗ ██████╗ ███╗   ███╗███████╗    ████████╗ ██████╗     ██████╗ ██╗  ██╗ ██████╗ ███╗   ██╗███████╗     ██████╗██╗  ██╗███████╗ ██████╗██╗  ██╗███████╗██████╗ 
         ██║    ██║██╔════╝██║     ██╔════╝██╔═══██╗████╗ ████║██╔════╝    ╚══██╔══╝██╔═══██╗    ██╔══██╗██║  ██║██╔═══██╗████╗  ██║██╔════╝    ██╔════╝██║  ██║██╔════╝██╔════╝██║ ██╔╝██╔════╝██╔══██╗
@@ -19,16 +22,15 @@ def main():
          ╚══╝╚══╝ ╚══════╝╚══════╝ ╚═════╝ ╚═════╝ ╚═╝     ╚═╝╚══════╝       ╚═╝    ╚═════╝     ╚═╝     ╚═╝  ╚═╝ ╚═════╝ ╚═╝  ╚═══╝╚══════╝     ╚═════╝╚═╝  ╚═╝╚══════╝ ╚═════╝╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝                                                                                                                                                                                                
     """)
 
-    
     time.sleep(2)
 
     print("""
     NOTE: THIS PROGRAM IS A WORK IN PROGRESS! SOME PHONE NUMBERS MIGHT NOT WORK. I AM CURRENTLY WORKING ON ADDING EXTENSION NUMBERS AND OTHER STUFFS. PLEASE CONTACT ME FOR
-          SUGGESSTIONS AT BURANDAY.ETHAN@GMAIL.COM OR THROUGH GITHUB.
+          SUGGESTIONS AT BURANDAY.ETHAN@GMAIL.COM OR THROUGH GITHUB.
     """)
 
-def continue_to_program():
 
+def continue_to_program():
     proceed = input("""
         WOULD YOU LIKE TO PROCEED?
         1: YES
@@ -69,7 +71,7 @@ def continue_to_program():
         """)
         time.sleep(1)
         quit()
-    elif proceed == "" or proceed == " " :
+    elif proceed == "" or proceed == " ":
         print("""
         
         
@@ -80,10 +82,8 @@ def continue_to_program():
         continue_to_program()
 
 
-
-# MENU 
+# MENU
 def menu():
-    
     choice = input("""
 
         WELCOME TO PHONE CHECKER")
@@ -97,9 +97,21 @@ def menu():
     if choice == "1":
         isPhoneNumber()
     elif choice == "2":
-        isMessage()
+        # isMessage()
+        print("""
+        
+        WORK IN PROGRESS
+        
+        """)
+        menu()
     elif choice == "3":
-        isAreaCode()
+        # isAreaCode()
+        print("""
+        
+        WORK IN PROGRESS
+        
+        """)
+        menu()
     elif choice == "" or choice == " ":
         print("""
         
@@ -113,16 +125,6 @@ def menu():
         CHOICE NOT VALID, PLEASE ENTER VALID CHOICE!
         
         """)
-        menu()
-        
-
-
-
-
-# INPUTS
-# phone_number = input("Enter a phone number: ")
-# message = input("Enter a message to identify the phone number(s): ")
-# area_code = input("Enter a phone number to detect the area code: ")
 
 
 # PHONE NUMBER CHECKER
@@ -133,10 +135,18 @@ def isPhoneNumber():
     # Check hyphens in phone_number 3 and 7.
     # """""""""
 
-
-    # """
-    # ADD ART FOR THIS FUNCTION
-    # """
+    print("""
+    
+    
+    _______  ____  ____   ___   ____  _____  ________     ______  ____  ____  ________    ______  ___  ____   ________  _______     
+   |_   __ \|_   ||   _|.'   `.|_   \|_   _||_   __  |  .' ___  ||_   ||   _||_   __  | .' ___  ||_  ||_  _| |_   __  ||_   __ \    
+     | |__) | | |__| | /  .-.  \ |   \ | |    | |_ \_| / .'   \_|  | |__| |    | |_ \_|/ .'   \_|  | |_/ /     | |_ \_|  | |__) |   
+     |  ___/  |  __  | | |   | | | |\ \| |    |  _| _  | |         |  __  |    |  _| _ | |         |  __'.     |  _| _   |  __ /    
+    _| |_    _| |  | |_\  `-'  /_| |_\   |_  _| |__/ | \ `.___.'\ _| |  | |_  _| |__/ |\ `.___.'\ _| |  \ \_  _| |__/ | _| |  \ \_  
+   |_____|  |____||____|`.___.'|_____|\____||________|  `.____ .'|____||____||________| `.____ .'|____||____||________||____| |___|
+    
+    
+    """)
 
     phone_number = input("""
     
@@ -145,6 +155,30 @@ def isPhoneNumber():
     """
     REWORK ON PHONE NUMBER AND ADD REGEX INSTEAD OF IF STATEMENTS
     """
+
+    # PHONE VALIDATOR USING REGEX
+    phone_number_regex = re.compile('\d{3}-\d{3}-\d{4}')
+    if re.match(phone_number_regex, phone_number):
+        print("""
+        
+        
+        VALID PHONE NUMBER
+        
+        
+        """)
+        menu()
+    else:
+        print("""
+        
+        
+        NOT VALID PHONE NUMBER
+        
+        
+        """)
+        menu()
+
+
+
 
     # if len(phone_number) != 12:
     #     return False
@@ -163,6 +197,8 @@ def isPhoneNumber():
     #         return False
     # return True
 
+
+
 # MESSAGE SCANNER
 # def isMessage():
 #     """""""""""
@@ -180,7 +216,7 @@ def isPhoneNumber():
 # def isAreaCode():
 #     area_code = input("Enter a phone number to detect the area code: ")
 #     phoneNumRegex = re.compile(r'(\d\d\d)-(\d\d\d-\d\d\d\d)')
-#     area_code = phoneNumRegex.search(area_code)   
+#     area_code = phoneNumRegex.search(area_code)
 #     return("Area code detected: " + area_code.group(1))
 
 
@@ -193,9 +229,7 @@ def isPhoneNumber():
 # print(isAreaCode(area_code))
 
 
+
 main()
 continue_to_program()
 # isPhoneNumber()
-
-
-

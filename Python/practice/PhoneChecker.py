@@ -10,6 +10,8 @@ import sys
 import re
 
 
+
+
 # STARTUP
 def main():
     print(""" 
@@ -82,6 +84,12 @@ def continue_to_program():
         continue_to_program()
 
 
+
+
+
+
+
+
 # MENU
 def menu():
     choice = input("""
@@ -97,21 +105,12 @@ def menu():
     if choice == "1":
         isPhoneNumber()
     elif choice == "2":
-        # isMessage()
-        print("""
-        
-        WORK IN PROGRESS
-        
-        """)
-        menu()
+        isMessage()
+
     elif choice == "3":
-        # isAreaCode()
-        print("""
-        
-        WORK IN PROGRESS
-        
-        """)
         menu()
+        #isAreaCode()
+
     elif choice == "" or choice == " ":
         print("""
         
@@ -177,9 +176,7 @@ def isPhoneNumber():
         """)
         menu()
 
-
-
-
+    # OLD PHONE SCANNER
     # if len(phone_number) != 12:
     #     return False
     # for i in range (0, 3):
@@ -198,26 +195,58 @@ def isPhoneNumber():
     # return True
 
 
-
 # MESSAGE SCANNER
-# def isMessage():
-#     """""""""""
-#     Detects any phone number(s) that are in the message.
-#     """""""""""
-#     message = input("Enter a message to identify the phone number(s): ")
-#     for i in range(len(message)):
-#         chunk = message[i:i+12]
-#         elif isPhoneNumber(chunk):
-#             return("Phone number(s) found: " + str(chunk))
-#         else:
-#             return("No phone number(s) detected.")
+def isMessage():
+    """""""""""
+     Detects any phone number(s) that are in the message.
+    """""""""""
+
+    message = input("Enter a message to identify the phone number(s): ")
+    phone_number_regex = re.compile('\d{3}-\d{3}-\d{4}')
+    if re.Pattern(phone_number_regex, message):
+        print("Phone number(s) found: " + phone_number_regex)
+    else:
+        print("No phone number(s) found.")
+
+
+    # message = input("Enter a message to identify the phone number(s): ")
+    # phone_number_regex = re.findall('\d{3}-\d{3}-\d{4}', message)
+    # for phone_number in phone_number_regex:
+    #     print("Phone number(s) found: " + phone_number)
+    # else:
+    #     print("No phone number(s) found.")
+
+
+
+# print("Phone number(s) found: " + phone_number)
+# print("No phone number(s) found.")
+
+
+
+        # chunk = message[i:i+12]
+        # if isPhoneNumber(chunk):
+        #     return "Phone number(s) found: " + str(chunk)
+        # else:
+        #     return "No phone number(s) detected."
+
+
+
+    # message = input("Enter a message to identify the phone number(s): ")
+    # for i in range(len(message)):
+    #
+    #     chunk = message[i:i + 12]
+    #     if isPhoneNumber(chunk):
+    #         return ("Phone number(s) found: " + str(chunk))
+    #     else:
+    #         return ("No phone number(s) detected.")
+
 
 # # AREA CODE IDENTIFIER
 # def isAreaCode():
 #     area_code = input("Enter a phone number to detect the area code: ")
 #     phoneNumRegex = re.compile(r'(\d\d\d)-(\d\d\d-\d\d\d\d)')
 #     area_code = phoneNumRegex.search(area_code)
-#     return("Area code detected: " + area_code.group(1))
+#     return "Area code detected: " + area_code.group(1)
 
 
 # OUTPUTS
@@ -227,6 +256,7 @@ def isPhoneNumber():
 # print(phone_number + ' is a phone number: ' + str(isPhoneNumber(phone_number)))
 # print(isMessage(message))
 # print(isAreaCode(area_code))
+
 
 
 
